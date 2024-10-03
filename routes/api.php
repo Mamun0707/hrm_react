@@ -29,7 +29,7 @@ Route::controller(EmployeeController::class)->group(function(){
     Route::get('employee/index','index');
     Route::post('employee/create','store');
     Route::get('employee/{employee}','show');
-    Route::post('employee/{id}','update');
+    Route::post('employee/edit/{id}','update');
     Route::delete('employee/{employee}','destroy');
     // Route::post('designation/create','store');
 });
