@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\EmployeeController;
+use App\Http\Controllers\Api\ProjectController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,14 @@ Route::controller(EmployeeController::class)->group(function(){
     Route::get('employee/{employee}','show');
     Route::post('employee/edit/{id}','update');
     Route::delete('employee/{employee}','destroy');
+    // Route::post('designation/create','store');
+});
+
+Route::controller(ProjectController::class)->group(function(){
+    Route::get('project/index','index');
+    Route::post('project/create','store');
+    Route::get('project/{project}','show');
+    Route::post('project/edit/{id}','update');
+    Route::delete('project/{project}','destroy');
     // Route::post('designation/create','store');
 });
