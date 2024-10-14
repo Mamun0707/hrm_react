@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\AttendanceController;
+
 // use App\Http\Controllers\Api\DesignationController;
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,4 @@ Route::controller(AttendanceController::class)->group(function(){
     Route::delete('attendance/{attendance}','destroy');
     // Route::post('designation/create','store');
 });
+
