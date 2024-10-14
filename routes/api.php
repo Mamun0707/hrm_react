@@ -6,6 +6,8 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\AttendanceController;
+use App\Http\Controllers\Api\LeaveManagementController;
+use App\Http\Controllers\Api\HolidaysController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +52,21 @@ Route::controller(AttendanceController::class)->group(function(){
     Route::get('attendance/{attendance}','show');
     Route::post('attendance/edit/{id}','update');
     Route::delete('attendance/{attendance}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(LeaveManagementController::class)->group(function(){
+    Route::get('leavemanagement/index','index');
+    Route::post('leavemanagement/create','store');
+    Route::get('leavemanagement/{leavemanagement}','show');
+    Route::post('leavemanagement/edit/{id}','update');
+    Route::delete('leavemanagement/{leavemanagement}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(HolidaysController::class)->group(function(){
+    Route::get('holidays/index','index');
+    Route::post('holidays/create','store');
+    Route::get('holidays/{holidays}','show');
+    Route::post('holidays/edit/{id}','update');
+    Route::delete('holidays/{holidays}','destroy');
     // Route::post('designation/create','store');
 });
