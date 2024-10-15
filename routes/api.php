@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\LeaveManagementController;
 use App\Http\Controllers\Api\HolidaysController;
+use App\Http\Controllers\Api\DepartmentController;
 
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -69,5 +70,13 @@ Route::controller(HolidaysController::class)->group(function(){
     Route::get('holidays/{holidays}','show');
     Route::post('holidays/edit/{id}','update');
     Route::delete('holidays/{holidays}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(DepartmentController::class)->group(function(){
+    Route::get('departments/index','index');
+    Route::post('departments/create','store');
+    Route::get('departments/{departments}','show');
+    Route::post('departments/edit/{id}','update');
+    Route::delete('departments/{departments}','destroy');
     // Route::post('designation/create','store');
 });
