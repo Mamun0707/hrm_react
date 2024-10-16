@@ -9,6 +9,8 @@ use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\LeaveManagementController;
 use App\Http\Controllers\Api\HolidaysController;
 use App\Http\Controllers\Api\DepartmentController;
+use App\Http\Controllers\Api\ConsultancyController;
+use App\Http\Controllers\Api\PayrollController;
 
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -78,5 +80,21 @@ Route::controller(DepartmentController::class)->group(function(){
     Route::get('departments/{departments}','show');
     Route::post('departments/edit/{id}','update');
     Route::delete('departments/{departments}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(ConsultancyController::class)->group(function(){
+    Route::get('consultancies/index','index');
+    Route::post('consultancies/create','store');
+    Route::get('consultancies/{consultancies}','show');
+    Route::post('consultancies/edit/{id}','update');
+    Route::delete('consultancies/{consultancies}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(PayrollController::class)->group(function(){
+    Route::get('payrolls/index','index');
+    Route::post('payrolls/create','store');
+    Route::get('payrolls/{payrolls}','show');
+    Route::post('payrolls/edit/{id}','update');
+    Route::delete('payrolls/{payrolls}','destroy');
     // Route::post('designation/create','store');
 });

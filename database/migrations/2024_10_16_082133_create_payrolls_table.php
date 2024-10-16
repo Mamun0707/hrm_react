@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->string('dept_name');
-            $table->string('head_of_dept');
-            $table->string('phone')->nullable();
-            $table->string('email')->unique();
-            $table->string('total_emp');
+            $table->foreignId('employee_id');
+            $table->decimal('gross_pay');
+            $table->decimal('net_pay');
+            $table->date('pay_period_start');
+            $table->date('pay_period_end');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('payrolls');
     }
 };

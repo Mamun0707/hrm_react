@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('consultancies', function (Blueprint $table) {
             $table->id();
-            $table->string('dept_name');
-            $table->string('head_of_dept');
-            $table->string('phone')->nullable();
+            $table->string('name');
+            $table->string('cont_per');
+            $table->string('phone');
             $table->string('email')->unique();
-            $table->string('total_emp');
+            $table->string('address');
+            $table->date('cont_date');
+            $table->string('cont_for');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('consultancies');
     }
 };

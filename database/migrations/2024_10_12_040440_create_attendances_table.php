@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('employee_id');
             $table->string('department');
-            $table->timestamp('check_in')->nullable();
+            $table->time('check_in')->nullable();
             $table->string('shift');
             $table->string('status');
             $table->timestamps();
