@@ -83,11 +83,11 @@ Route::controller(DepartmentController::class)->group(function(){
     // Route::post('designation/create','store');
 });
 Route::controller(ConsultancyController::class)->group(function(){
-    Route::get('consultancies/index','index');
-    Route::post('consultancies/create','store');
-    Route::get('consultancies/{consultancies}','show');
-    Route::post('consultancies/edit/{id}','update');
-    Route::delete('consultancies/{consultancies}','destroy');
+    Route::get('consultancy/index','index');
+    Route::post('consultancy/create','store');
+    Route::get('consultancy/{consultancy}','show');
+    Route::post('consultancy/edit/{id}','update');
+    Route::delete('consultancy/{consultancy}','destroy');
     // Route::post('designation/create','store');
 });
 Route::controller(PayrollController::class)->group(function(){
