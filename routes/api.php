@@ -9,8 +9,8 @@ use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\LeaveManagementController;
 use App\Http\Controllers\Api\HolidaysController;
 use App\Http\Controllers\Api\DepartmentController;
-use App\Http\Controllers\Api\ConsultancyController;
 use App\Http\Controllers\Api\PayrollController;
+use App\Http\Controllers\Api\ResignationController;
 
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -82,14 +82,6 @@ Route::controller(DepartmentController::class)->group(function(){
     Route::delete('departments/{departments}','destroy');
     // Route::post('designation/create','store');
 });
-Route::controller(ConsultancyController::class)->group(function(){
-    Route::get('consultancy/index','index');
-    Route::post('consultancy/create','store');
-    Route::get('consultancy/{consultancy}','show');
-    Route::post('consultancy/edit/{id}','update');
-    Route::delete('consultancy/{consultancy}','destroy');
-    // Route::post('designation/create','store');
-});
 Route::controller(PayrollController::class)->group(function(){
     Route::get('payrolls/index','index');
     Route::post('payrolls/create','store');
@@ -98,3 +90,12 @@ Route::controller(PayrollController::class)->group(function(){
     Route::delete('payrolls/{payrolls}','destroy');
     // Route::post('designation/create','store');
 });
+Route::controller(ResignationController::class)->group(function(){
+    Route::get('resignation/index','index');
+    Route::post('resignation/create','store');
+    Route::get('resignation/{resignation}','show');
+    Route::post('resignation/edit/{id}','update');
+    Route::delete('resignation/{resignation}','destroy');
+    // Route::post('designation/create','store');
+});
+
