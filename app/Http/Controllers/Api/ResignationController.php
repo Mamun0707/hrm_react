@@ -9,7 +9,7 @@ use App\Models\Resignation;
 class ResignationController extends BaseController
 {
     public function index(){
-        $data=Resignation::get();
+        $data=Resignation::with('employee')-> get();
         return $this->sendResponse($data,"Resignation data");
     }
 
