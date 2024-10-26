@@ -11,7 +11,7 @@ class Resignation extends Model
     protected $fillable=['employee_id','title','address_to','details', 'apply_date', 'effect_date', 'approve_date', 'status'];
     public function employee()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class); //this is for relation table code(belongsTo)
     }
 
 }

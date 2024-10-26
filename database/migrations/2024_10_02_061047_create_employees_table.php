@@ -16,9 +16,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone_no');
-            $table->bigInteger('designation_id')->nullable();
-            $table->bigInteger('department_id')->nullable();
+            $table->string('date_of_birth');
+            $table->string('age');
+            $table->string('hire_date');
+            $table->string('job_location');
+            $table->string('designation_id')->nullable();
+            $table->string('department_id')->nullable();
             $table->string('education')->nullable();
+            $table->string('address');
             $table->decimal('salary', 8, 2)->nullable();
             $table->timestamps();
 
