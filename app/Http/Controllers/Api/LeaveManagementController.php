@@ -9,7 +9,7 @@ use App\Models\LeaveManagement;
 class LeaveManagementController extends BaseController
 {
     public function index(){
-        $data=LeaveManagement::get();
+        $data=LeaveManagement::with('employee')->get();//with (employee)-> is relation table code.
         return $this->sendResponse($data,"LeaveManagement data");
     }
 

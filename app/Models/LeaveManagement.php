@@ -9,4 +9,12 @@ class LeaveManagement extends Model
 {
     use HasFactory;
     protected $fillable=['employee_id','name','apply_date','leave_from', 'leave_to','leave_type'];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+        
+        //  this is for relation table code(belongsTo)
+    }
+
 }
