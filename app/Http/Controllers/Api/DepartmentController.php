@@ -9,7 +9,7 @@ use App\Http\Controllers\Api\BaseController;
 class DepartmentController extends BaseController
 {
     public function index(){
-        $data=Departments::get();
+        $data=Departments::with('employee')->get();
         return $this->sendResponse($data,"Departments data");
     }
 

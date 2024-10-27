@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class AttendanceController extends BaseController
 {
     public function index(){
-        $data=attendance::get();
+        $data=attendance::with('employee')->get();
         return $this->sendResponse($data,"attendance data");
     }
 

@@ -9,4 +9,10 @@ class Departments extends Model
 {
     use HasFactory;
     protected $fillable=['dept_name','head_of_dept','phone','email', 'total_emp'];
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+
+        //  this is for relation table code(belongsTo)
+    }
 }
