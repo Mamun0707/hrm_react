@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class EmployeeController extends BaseController
 {
     public function index(){
-        $data=Employee::get();
+        $data=Employee::with('department')->get();
         return $this->sendResponse($data,"Employee data");
     }
 
