@@ -8,5 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Payroll extends Model
 {
     use HasFactory;
-    protected $fillable=['employee_id','gross_pay','net_pay','pay_period_start', 'pay_period_end'];
+    protected $fillable=['employee_id',
+                        'basic',
+                        'h_rent',
+                        'medical',
+                         'fine',
+                         'conveyance',
+                         'provident_fund',
+                         'net_pay',
+                         'pay_period_start',
+                         'pay_period_end'];
 }

@@ -13,9 +13,19 @@ return new class extends Migration
     {
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id');
-            $table->decimal('gross_pay');
-            $table->decimal('net_pay');
+            // $table->foreignId('employee_id');
+            // $table->decimal('gross_pay');
+            // $table->decimal('net_pay');
+            // $table->date('pay_period_start');
+            // $table->date('pay_period_end');
+            $table->foreignId('employee_id'); // employee_id foreign key
+            $table->decimal('basic', 8, 2);
+            $table->decimal('h_rent', 8, 2);
+            $table->decimal('medical', 8, 2);
+            $table->decimal('fine', 8, 2)->default(0); // default to 0 if no fine
+            $table->decimal('conveyance', 8, 2);
+            $table->decimal('provident_fund', 8, 2);
+            $table->decimal('net_pay', 8, 2);
             $table->date('pay_period_start');
             $table->date('pay_period_end');
             $table->timestamps();
