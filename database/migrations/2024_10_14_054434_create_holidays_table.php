@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('holidays', function (Blueprint $table) {
             $table->id();
+            $table->BigInteger('employee_id');
             $table->string('title');
             $table->string('type');
             $table->date('start_date');

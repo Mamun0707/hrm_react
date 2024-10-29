@@ -9,7 +9,7 @@ use App\Models\Holidays;
 class HolidaysController extends BaseController
 {
     public function index(){
-        $data=Holidays::get();
+        $data=Holidays::with('employee')->get();
         return $this->sendResponse($data,"Holidays data");
     }
 
