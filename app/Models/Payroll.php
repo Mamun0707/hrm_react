@@ -18,4 +18,12 @@ class Payroll extends Model
                          'net_pay',
                          'pay_period_start',
                          'pay_period_end'];
+
+    public function employee()
+                         {
+                             return $this->belongsTo(Employee::class);
+
+                             //  this is for relation table code(belongsTo)
+                         }
+
 }

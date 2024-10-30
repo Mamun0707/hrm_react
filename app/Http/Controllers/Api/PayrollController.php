@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class PayrollController extends BaseController
 {
     public function index(){
-        $data=Payroll::get();
+        $data=Payroll::with('employee')->get();
         return $this->sendResponse($data,"Payroll data");
     }
 
@@ -18,8 +18,8 @@ class PayrollController extends BaseController
         $data=Payroll::create($request->all());
         return $this->sendResponse($data,"Payroll created successfully");
     }
-    public function show(Payroll $payroll){
-        return $this->sendResponse($payroll,"Payroll created successfully");
+    public function show(Payroll $payrolls){
+        return $this->sendResponse($payrolls,"Payroll created successfully");
     }
 
     public function update(Request $request,$id){
@@ -28,9 +28,10 @@ class PayrollController extends BaseController
         return $this->sendResponse($id,"Payroll updated successfully");
     }
 
-    public function destroy(Payroll $payroll)
+    public function destroy(Payroll $payrolls)
     {
-        $payroll=$payroll->delete();
-        return $this->sendResponse($payroll,"Payroll deleted successfully");
+
+        $payrolls=$payrolls->delete();
+        return $this->sendResponse($payrolls,"Payroll deleted successfully");
     }
 }

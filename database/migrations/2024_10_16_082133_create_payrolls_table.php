@@ -18,7 +18,7 @@ return new class extends Migration
             // $table->decimal('net_pay');
             // $table->date('pay_period_start');
             // $table->date('pay_period_end');
-            $table->foreignId('employee_id'); // employee_id foreign key
+            $table->BigInteger('employee_id'); // employee_id foreign key
             $table->decimal('basic', 8, 2);
             $table->decimal('h_rent', 8, 2);
             $table->decimal('medical', 8, 2);

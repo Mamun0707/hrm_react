@@ -17,8 +17,8 @@ class DepartmentController extends BaseController
         $data=Departments::create($request->all());
         return $this->sendResponse($data,"Departments created successfully");
     }
-    public function show(Departments $department){
-        return $this->sendResponse($department,"Departments created successfully");
+    public function show(Departments $departments){
+        return $this->sendResponse($departments,"Departments created successfully");
     }
 
     public function update(Request $request,$id){
@@ -27,9 +27,9 @@ class DepartmentController extends BaseController
         return $this->sendResponse($id,"Departments updated successfully");
     }
 
-    public function destroy(Departments $department)
+    public function destroy(Departments $departments)
     {
-        $department=$department->delete();
-        return $this->sendResponse($department,"Departments deleted successfully");
+        $departments=$departments->delete();
+        return $this->sendResponse($departments,"Departments deleted successfully");
     }
 }
