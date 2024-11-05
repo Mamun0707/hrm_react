@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string('education')->nullable();
             $table->string('address');
             $table->decimal('salary', 8, 2)->nullable();
+            $table->decimal('provident_fund', 8, 2);
+            $table->decimal('medical', 8, 2);
+            $table->decimal('h_rent', 8, 2);
             $table->timestamps();
 
         });
