@@ -24,10 +24,11 @@ return new class extends Migration
             $table->string('department_id')->nullable();
             $table->string('education')->nullable();
             $table->string('address');
-            $table->decimal('salary', 8, 2)->nullable();
+            $table->decimal('basic', 8, 2)->nullable();
             $table->decimal('provident_fund', 8, 2);
             $table->decimal('medical', 8, 2);
             $table->decimal('h_rent', 8, 2);
+            $table->integer('status')->default(1)->comment('1 active 2 inactive');
             $table->timestamps();
 
         });

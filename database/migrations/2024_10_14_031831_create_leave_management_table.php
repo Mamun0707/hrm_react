@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('leave_management', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('employee_id');
-            $table->string('name');
             $table->date('apply_date');
             $table->date('leave_from');
             $table->date('leave_to');
+            $table->text('details');
             $table->enum('leave_type', ['sick', 'vacation', 'personal', 'maternity', 'paternity']);
             $table->timestamps();
         });

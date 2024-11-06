@@ -12,12 +12,12 @@ class Payroll extends Model
                         'basic',
                         'h_rent',
                         'medical',
-                         'fine',
-                         'conveyance',
-                         'provident_fund',
-                         'net_pay',
-                         'pay_period_start',
-                         'pay_period_end'];
+                        'fine',
+                        'conveyance',
+                        'provident_fund',
+                        'net_pay',
+                        'salary_month',
+                        'salary_year'];
 
     public function employee()
                          {

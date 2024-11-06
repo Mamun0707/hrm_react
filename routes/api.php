@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\LeaveManagementController;
 use App\Http\Controllers\Api\HolidaysController;
 use App\Http\Controllers\Api\DepartmentController;
+use App\Http\Controllers\Api\DesignationController;
 use App\Http\Controllers\Api\PayrollController;
 use App\Http\Controllers\Api\ResignationController;
 
@@ -80,6 +81,14 @@ Route::controller(DepartmentController::class)->group(function(){
     Route::get('departments/{departments}','show');
     Route::post('departments/edit/{id}','update');
     Route::delete('departments/{departments}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(DesignationController::class)->group(function(){
+    Route::get('designation/index','index');
+    Route::post('designation/create','store');
+    Route::get('designation/{designation}','show');
+    Route::post('designation/edit/{id}','update');
+    Route::delete('designation/{designation}','destroy');
     // Route::post('designation/create','store');
 });
 Route::controller(PayrollController::class)->group(function(){

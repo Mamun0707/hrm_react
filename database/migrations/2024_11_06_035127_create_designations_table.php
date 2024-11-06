@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('designations', function (Blueprint $table) {
             $table->id();
-            $table->BigInteger('employee_id');
-            $table->date('attendance_date')->nullable();
-            $table->time('check_in')->nullable();
-            $table->time('check_out')->nullable();
-            $table->string('status')->comment('0 absent, 1 present, 2 late');
+            $table->string('desi_name');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('designations');
     }
 };
