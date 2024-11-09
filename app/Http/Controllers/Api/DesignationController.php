@@ -17,8 +17,8 @@ class DesignationController extends BaseController
         $data=Designation::create($request->all());
         return $this->sendResponse($data,"Designation created successfully");
     }
-    public function show(Designation $departments){
-        return $this->sendResponse($departments,"Designation created successfully");
+    public function show(Designation $designation){
+        return $this->sendResponse($designation,"Designation created successfully");
     }
 
     public function update(Request $request,$id){
@@ -27,9 +27,9 @@ class DesignationController extends BaseController
         return $this->sendResponse($id,"Designation updated successfully");
     }
 
-    public function destroy(Designation $departments)
+    public function destroy(Designation $designation)
     {
-        $departments=$departments->delete();
-        return $this->sendResponse($departments,"Designation deleted successfully");
+        $designation=$designation->delete();
+        return $this->sendResponse($designation,"Designation deleted successfully");
     }
 }

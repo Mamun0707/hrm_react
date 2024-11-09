@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('desi_name');
             $table->string('description');
-            $table->string('status');
+            $table->string('status', 20)->default('Active');
             $table->timestamps();
         });
     }
