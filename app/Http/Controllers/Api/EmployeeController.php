@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Http\Controllers\Api\BaseController;
@@ -10,12 +9,15 @@ use App\Http\Controllers\Api\BaseController;
 class EmployeeController extends BaseController
 {
     public function index(){
-        $data=Employee::with('department')->get();
+
+        $data=Employee::with('department','attendance')->get();
         return $this->sendResponse($data,"Employee data");
     }
 
     public function store(Request $request){
-        $data=Employee::create($request->all());
+        $input=$request->all();
+        unset($input['is_trusted'],$input['is_trusted']);
+        $data=Employee::create($input);
         return $this->sendResponse($data,"Employee created successfully");
     }
     public function show(Employee $employee){

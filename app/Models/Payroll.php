@@ -19,11 +19,8 @@ class Payroll extends Model
                         'salary_month',
                         'salary_year'];
 
-    public function employee()
-                         {
-                             return $this->belongsTo(Employee::class);
-
-                             //  this is for relation table code(belongsTo)
-                         }
+    public function employee(){
+        return $this->belongsTo(Employee::class);
+    }
 
 }

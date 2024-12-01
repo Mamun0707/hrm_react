@@ -16,4 +16,10 @@ class Employee extends Model
 
         //  this is for relation table code(belongsTo)
     }
+    public function attendance()
+    {
+        return $this->hasMany(attendance::class)->where('status',1);
+
+        //  this is for relation table code(belongsTo)
+    }
 }
