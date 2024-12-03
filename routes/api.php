@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\DepartmentController;
 use App\Http\Controllers\Api\DesignationController;
 use App\Http\Controllers\Api\PayrollController;
 use App\Http\Controllers\Api\ResignationController;
+use App\Http\Controllers\Api\CareerController;
 
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -105,6 +106,14 @@ Route::controller(ResignationController::class)->group(function(){
     Route::get('resignation/{resignation}','show');
     Route::post('resignation/edit/{id}','update');
     Route::delete('resignation/{resignation}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(CareerController::class)->group(function(){
+    Route::get('career/index','index');
+    Route::post('career/create','store');
+    Route::get('career/{career}','show');
+    Route::post('career/edit/{id}','update');
+    Route::delete('career/{career}','destroy');
     // Route::post('designation/create','store');
 });
 
