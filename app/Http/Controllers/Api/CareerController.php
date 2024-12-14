@@ -14,7 +14,13 @@ class CareerController extends BaseController
     }
 
     public function store(Request $request){
-        $data=Career::create($request->all());
+        $input=$request->all();
+        if($request->hasFile('resume_pdf')){
+            $fileName = time().'.'.$request->resume_pdf->getClientOriginalExtension();
+            $request->resume_pdf->move(public_path('resume_pdf'), $fileName);
+            $input['resume_pdf']=$fileName;
+        }
+        $data=Career::create($input);
         return $this->sendResponse($data,"Career created successfully");
     }
     public function show(Career $career){
